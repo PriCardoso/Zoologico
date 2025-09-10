@@ -3,11 +3,13 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class MamiferoController
 {
-    public function Homepage()
+    #[Route('/', name: 'homepage')]
+    public function homepage(): Response
     {
-        return new Response(content: 'Olá Mundo!!!');
+        return new Response('Olá Zoologico!!!');
     }
 }
