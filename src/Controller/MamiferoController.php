@@ -14,8 +14,13 @@ class MamiferoController
     }
 
     #[Route('/mamifero/{animal}', name: 'mamifero_show')]
-    public function show(string $animal): Response
+    public function show($animal): Response
     {
-        return new Response('Esta é a página de detalhes do Mamífero: ' . $animal);
+        return new Response(
+            sprintf(
+                'Esta é a página de detalhes do Mamífero "%s"',
+                ucwords( str_replace('-', ' ', $animal) )
+            )
+        );
     }
 }
