@@ -12,4 +12,10 @@ class MamiferoController
     {
         return new Response('Olá Zoologico!!!');
     }
+
+    #[Route('/mamifero/{animal}', name: 'mamifero_show')]
+    public function show(string $animal): Response
+    {
+        return new Response('Esta é a página de detalhes do Mamífero: ' . $animal);
+    }
 }
